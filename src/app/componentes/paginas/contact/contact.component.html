@@ -1,0 +1,79 @@
+
+<style>
+  #map-container {
+    width: 100%;
+    height: 0;
+    margin: 0 auto;
+    padding-top: 134.74026%;
+    position: relative;
+  }
+  #map {
+    width: 100%;
+    height: 100%; /* had to specify height/width */
+    position: absolute;
+    top: 0; 
+    right: 0;
+    left: 0; 
+    bottom: 0; 
+  }
+  
+</style>
+<div class="ae-container-fluid ae-container-fluid--inner rk-main">  
+  <div class="ae-grid">   
+    <div class="ae-grid__item item-lg-6 item-lg--offset-7">     
+      <h4 class="ae-u-bolder au-mb-3 contact__title">Contact me</h4> 
+      <p class="au-mb-4 contact__desc">Here you can <a href="#contact-form"></a>find me! </p>
+    </div>
+  </div>
+  <div class="ae-grid">
+    <div class="ae-grid__item item-lg-6">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56644.41810538125!2d-58.99534525000001!3d-27.460661499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c62a6f5f70b%3A0xf03ac86511c2cd6d!2sResistencia%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1670356547487!5m2!1ses-419!2sar" width="500" height="550" style="border: 2px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="ae-grid__item item-lg-6">
+      <div class="ae-grid ae-grid--collapse">
+        <div class="ae-grid__item item-lg-2 au-v-hidden au-lg-v-visible">
+          <button id="map-arrow" class="arrow-button arrow-button--nospace arrow-button--center arrow-button--flip">
+            <svg>
+              <use xlink:href="assets/img/symbols.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="ae-grid__item item-lg-10 au-xs-ta-center au-lg-ta-left">
+          <p class="au-mb-4 contact__addr">Resistencia, Chaco<br>Argentina</p>
+          <p> <span class="contact__phone"> <span class="rk-light-color">Phone </span> +54 9 3624 252955</span><br><span class="contact__email au-block au-truncate"> <span class="rk-light-color">Email &nbsp;&nbsp; </span><a href="pepitosk8hd@gmail.com">saavedra.pedro@yahoo.com.ar</a></span></p>
+        </div>
+        <div class="contact_spacer au-none au-lg-block"></div>
+      </div>
+      
+      <!-- formulario de contacto -->
+      <div class="ae-grid__item item-lg-12">
+        <form id="contact-form" action="#0" class="ae-form--full">
+          <input name="name" id="name" type="text" placeholder="* Name" required>
+          <input name="email" id="email" type="email" placeholder="* Email" required>
+          <textarea placeholder="affair" cols="30" rows="4"></textarea>
+          <p class="au-xs-ta-right au-pt-4 group-buttons"><a href="mailto:saavedra.pedro@yahoo.com.ar" class="arrow-button arrow-button--right arrow-button--out">Send<span class="arrow-cont">
+                <svg>
+                  <use xlink:href="assets/img/symbols.svg#arrow"></use>
+                </svg></span></a></p>
+        </form>
+      </div>
+      <a href="mailto:saavedra.pedro@yahoo.com.ar" id="trucazo"></a>
+    </div>
+  </div>
+</div>
+<script>
+  const $form = document.querySelector('#form')
+  const $buttonMailto = document.querySelector('#trucazo')
+
+  $form.addEventListener('submit', handleSubmit)
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = new FormData(this)
+    $buttonMailto.setAttribute('href', `mailto:saavedra.pedro@yahoo.com.ar?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('affair')}`)
+    $buttonMailto.click()
+  }
+</script>
