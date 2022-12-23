@@ -1,0 +1,11 @@
+.text-danger {
+    text-align: start;
+    margin-left: 7px;
+}
+
+.form {
+    margin-top: 10vh;
+    margin-bottom: 30vh;
+    text-align:center; 
+    vertical-align:middle;
+}
