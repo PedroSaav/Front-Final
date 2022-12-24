@@ -71,7 +71,6 @@ export class CrearFormComponent implements OnInit {
       })
     }
 
-
   }
 
   esEditar() {
