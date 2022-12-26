@@ -24,7 +24,7 @@
                             <td>{{ producto.precio }}</td>
                             <td>
                                 <i [routerLink]="['/editar-producto', producto._id]" class="bi bi-pen text-primary m-3"></i>
-                                <i (click)="eliminarProducto(producto._id)" class="bi bi-trash text-danger m-3"></i>
+                                <i (click)="eliminarProducto(producto._id)" class="bi bi-trash text-danger m-3"></i>    
                             </td>
                         </tr>
                         </tbody>

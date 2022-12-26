@@ -47,7 +47,7 @@ export class CrearFormComponent implements OnInit {
 
     if(this.id !== null) {
       
-      //EDITAMOS PRODUCTO
+      //Editar Producto
 
       this._productoService.editarProducto(this.id, PRODUCTO).subscribe(data => {
         this.toastr.info('El producto fue actualizado con exito!', 'Producto actualizado!');

@@ -7,8 +7,8 @@ import { Producto } from '../../models/producto';
   providedIn: 'root'
 })
 export class ProductoService {
-    // url = 'http://localhost:4000/api/productos/'; //Comment for deploy
-      url = 'api/productos/'; //Railway link
+    // url = 'http://localhost:4200/api/formulario/'; //Comment for deploy
+      url = 'https://final-back-production.up.railway.app/api/productos/'; //Railway link
       // url = environment.URL;
 
   constructor(private http: HttpClient) { }
